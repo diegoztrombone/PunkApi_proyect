@@ -1,5 +1,7 @@
 // TO DO:
-// Make independient pags (home, beers, random)
+// Make independient pags (home-with random btn, bio, cervezas, contacto)
+// Work in CSS, mobile first
+// Search engine
 
 const beerSectionNode = document.getElementById("beerSection")
 const randomBeer = document.getElementById("myBnt")
