@@ -4,17 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="random-style.css" />
+    <link rel="stylesheet" href="../reset.css" />
     <title>Punk API - Diego Zeta</title>
   </head>
   <body>
     <header>
       <nav>
         <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="beers/beers.html">Nuestras Cervezas</a></li>
-          <li><a href="random/random.html">Random</a></li>
-        </ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="../beers/beers.html">Nuestras Cervezas</a></li>
+          <li><a href="../random/random.html">Random</a></li>
         </ul>
       </nav>
 
@@ -25,11 +25,12 @@
         <h1>Punk Api Beers</h1>
         <p>Una cerveza con mucho código</p>
       </section>
+      <section id="randomWrapper"></section>
       <section>
         <h3>¿No te decides?</h3>
-        <a href="./random/random.html">Random Beer</a>
+        <button type="submit" id="randomBtn">Random</button>
       </section>
     </main>
-    <script src="./apps/app.js"></script>
+    <script src="../random/random.js"></script>
   </body>
 </html>

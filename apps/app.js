@@ -11,8 +11,6 @@ const apiUrl = "https://api.punkapi.com/v2/beers"
 const randomApiUrl = "https://api.punkapi.com/v2/beers/random"
 
 
-
-
 const counterObj = {
     counter : 1,
 }
