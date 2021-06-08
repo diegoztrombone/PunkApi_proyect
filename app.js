@@ -1,6 +1,6 @@
 // TO DO:
 // Make independient pags (home, beers, random)
-// Buttons page up page down
+
 const beerSectionNode = document.getElementById("beerSection")
 const randomBeer = document.getElementById("myBnt")
 const myPlusBnt = document.getElementById("pagePlus")
