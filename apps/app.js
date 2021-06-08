@@ -16,7 +16,7 @@ const counterObj = {
 }
 
 const dataCb = x => beerSectionNode.innerHTML += printBeer(x)
-const printBeer = data => `<h3>${data.name}</h3><p>${data.description}</p>`
+const printBeer = data => `<div class="tarjetClass"><div class="imgContainer"><img src="${data.image_url}"></div><div class="descriptionBox"><h3>${data.name}</h3><p>${data.description}</p></div></div>`
 
 const fetchedData = (url) => {
     return fetch(url)
@@ -30,11 +30,6 @@ fetchedData(apiUrl)
         
 })
 
-randomBeer.addEventListener("click", () => {
-    beerSectionNode.innerHTML = ""
-    fetchedData(randomApiUrl)
-        .then(data => data.map(dataCb))
-})
 
 myPlusBnt.addEventListener("click", (e) => {
     if (counterObj.counter >= 13) {
