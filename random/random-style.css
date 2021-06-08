@@ -3,4 +3,35 @@
 }
 #randomWrapper {
   min-height: 15rem;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.imgContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 500px;
+}
+
+.tarjetClass img {
+  width: 150px;
+  height: 450px;
+}
+
+.tarjetClass {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50rem;
+}
+
+.descriptionBox {
+  text-align: justify;
+  width: 65%;
 }
