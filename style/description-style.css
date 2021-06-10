@@ -10,7 +10,7 @@
   justify-content: center;
 }
 
-.imgContainer {
+.descriptionImg {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,12 +18,12 @@
   height: 500px;
 }
 
-.tarjetClass img {
+.beerDescriptionContainer img {
   width: 150px;
   height: 450px;
 }
 
-.tarjetClass {
+.beerDescriptionContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -31,7 +31,7 @@
   height: 50rem;
 }
 
-.descriptionBox {
+.descriptionBeer {
   text-align: justify;
   width: 65%;
 }

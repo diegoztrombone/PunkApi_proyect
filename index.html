@@ -1,40 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/style.css" />
     <link rel="stylesheet" href="./style/reset.css" />
     <title>Punk API - Diego Zeta</title>
   </head>
   <body>
     <nav class="navbar">
-      <ul>
-        <div id="logo">
-          <p>PUNK API</p>
-        </div>
-        <li><a href="index.html">Inicio</a></li>
+      <div id="logo">
+        <p>PUNK API</p>
+      </div>
+      <ul class="nav" id="nav">
+        <li><a class="active" href="index.html">Inicio</a></li>
         <li><a href="beers/beers.html">Nuestras Cervezas</a></li>
         <li><a href="description/description.html?ID=random">Random</a></li>
       </ul>
-      </ul>
+      <div id="menu">
+        <div id="bar1" class="bar"></div>
+        <div id="bar2" class="bar"></div>
+        <div id="bar3" class="bar"></div>
+      </div>
     </nav>
     <header>
-     
-
-      <p></p>
-    </header>
-    <main>
       <section>
         <h1>Punk Api Beers</h1>
         <p>Una cerveza con mucho código</p>
       </section>
+    </header>
+    <main>
       <section>
         <h3>¿No te decides?</h3>
         <a href="./description/description.html?ID=random">Random Beer</a>
       </section>
     </main>
-
+    <script src="./apps/menu.js"></script>
   </body>
 </html>

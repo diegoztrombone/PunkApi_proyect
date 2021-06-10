@@ -9,14 +9,20 @@
     <title>Punk API - Diego Zeta</title>
   </head>
   <body>
-    <nav>
-      <ul>
-        <li><a href="../index.html">Inicio</a></li>
+    <nav class="navbar">
+      <div id="logo">
+        <p>PUNK API</p>
+      </div>
+      <ul class="nav" id="nav">
+        <li><a class="active" href="../index.html">Inicio</a></li>
         <li><a href="../beers/beers.html">Nuestras Cervezas</a></li>
-        <li>
-          <a href="../description/description.html?ID=random">Random</a>
-        </li>
+        <li><a href="../description/description.html?ID=random">Random</a></li>
       </ul>
+      <div id="menu">
+        <div id="bar1" class="bar"></div>
+        <div id="bar2" class="bar"></div>
+        <div id="bar3" class="bar"></div>
+      </div>
     </nav>
     <header>
       <section>
@@ -33,5 +39,6 @@
       <section></section>
     </main>
     <script src="../description/description.js"></script>
+    <script src="../apps/menu.js"></script>
   </body>
 </html>

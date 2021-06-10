@@ -1,53 +1,141 @@
-/*
-#beerSection {
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Helvetica, sans-serif;
+  background-color: #ff6567;
+}
+
+#menu {
+  width: 35px;
+  height: 30px;
+  margin-right: 20px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.bar {
+  height: 4px;
+  width: 100%;
+  background-color: white;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+#bar1 {
+  transform: translateY(-4px);
+}
+
+#bar3 {
+  transform: translateY(4px);
+}
+
+.change #bar1 {
+  transform: translateY(4px) rotateZ(-45deg);
+}
+.change #bar2 {
+  opacity: 0;
+}
+
+.change #bar3 {
+  transform: translateY(-4px) rotateZ(45deg);
+}
+
+#logo {
+  margin-left: 20px;
+}
+#randomWrapper {
+  min-height: 15rem;
   margin-top: 15px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
 }
 
-.imgContainer {
+.descriptionImg {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 300px;
+  height: 500px;
+}
+
+.beerDescriptionContainer img {
   width: 150px;
-  height: 300px;
+  height: 450px;
 }
 
-.tarjetClass img {
-  width: 75px;
-  height: 225px;
-}
-
-.tarjetClass {
-  width: 40%;
+.beerDescriptionContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 30rem;
+  height: 50rem;
 }
 
-.descriptionBox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.descriptionBeer {
   text-align: center;
   width: 65%;
-  height: 5rem;
 }
-
-*/
-
-* {
-  box-sizing: border-box;
+/* .menu-bg {
+  width: 0;
+  height: 0;
+  background-color: radial-gradient(
+    circle,
+    rgba(255, 0, 0, 0.739),
+    rgb(230, 21, 49)
+  );
 }
+.change-bg {
+  width: 550px;
+  height: 540px;
+} */
 
 .navbar {
+  color: white;
+  width: 100%;
+  height: 50px;
+  background-color: black;
+  box-shadow: 5px 0px 15px 5px rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+}
+
+.nav {
+  position: absolute;
+  top: 100px;
+  right: 5px;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  transition: 0.3s ease;
+  display: none;
+}
+
+.change {
+  display: flex;
+}
+
+.nav li a {
+  display: block;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  padding: 10px 15px;
+}
+
+.nav li:hover {
+  background-color: rgb(73, 73, 73);
 }
 
 #beerSection {
@@ -98,3 +186,60 @@
   width: 65%;
   height: 5rem;
 }
+
+@media screen and (min-width: 752px) {
+  .nav {
+    position: unset;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 50px;
+  }
+  #menu {
+    display: none;
+  }
+}
+
+/*
+#beerSection {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.imgContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 300px;
+}
+
+.tarjetClass img {
+  width: 75px;
+  height: 225px;
+}
+
+.tarjetClass {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 30rem;
+}
+
+.descriptionBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 65%;
+  height: 5rem;
+}
+
+*/
