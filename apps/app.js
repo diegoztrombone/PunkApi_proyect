@@ -1,8 +1,3 @@
-// TO DO:
-// Make independient pags (home-with random btn, bio, cervezas, contacto)
-// Work in CSS, mobile first
-// Search engine
-
 const beerSectionNode = document.getElementById("beerSection");
 const randomBeer = document.getElementById("randomBtn");
 const myPlusBnt = document.getElementById("pagePlus");
@@ -18,19 +13,22 @@ const allBeerArr = [
   "https://api.punkapi.com/v2/beers?page=4&per_page=80",
   "https://api.punkapi.com/v2/beers?page=5&per_page=80",
 ];
+let beersArr = [];
+let beerSearch = "";
+let timer;
+
 const counterObj = {
   counter: 1,
 };
 
 const dataCb = (x) => (beerSectionNode.innerHTML += printBeer(x));
+
 const printBeer = (data) =>
   `<div class="tarjetClass"><div class="imgContainer"><img src="${data.image_url}"></div><div class="descriptionBox"><a href="../description/description.html?ID=${data.id}"><h3>${data.name}</h3></a></div></div>`;
 
 const fetchedData = (url) => {
   return fetch(url).then((res) => res.json());
 };
-
-let beersArr = [];
 
 fetchedData(apiUrl).then((data) => {
   data.map(dataCb);
@@ -45,8 +43,6 @@ const allFetchedBeer = (urlArr) => {
   });
 };
 
-allFetchedBeer(allBeerArr);
-
 myPlusBnt.addEventListener("click", (e) => {
   if (counterObj.counter >= 32) {
     return e.preventDefault();
@@ -60,27 +56,27 @@ myPlusBnt.addEventListener("click", (e) => {
 });
 
 myLessBnt.addEventListener("click", (e) => {
+  allFetchedBeer(allBeerArr);
   if (counterObj.counter <= 1) {
     return e.preventDefault();
   } else {
     counterObj.counter--;
     beerSectionNode.innerHTML = "";
+    beerSectionNode.innerHTML = "Loading";
     fetchedData(
       `https://api.punkapi.com/v2/beers?page=${counterObj.counter}&per_page=10`
     ).then((data) => data.map(dataCb));
   }
 });
-let beerSearch = "";
-let timer;
 
 function debounce(search, timeout = 300, node) {
-  node.innerHTML = "Loading";
   return new Promise((res, rej) => {
     clearTimeout(timer);
     if (search == "") return;
+    node.innerHTML = "Loading";
     timer = setTimeout(async () => {
       const awaitedData = await fetchedData(
-        `https://api.punkapi.com/v2/beers?beer_name=${search}`
+        `https://api.punkapi.com/v2/beers?beer_name=${search}&per_page=80`
       );
       res(awaitedData);
     }, timeout);
