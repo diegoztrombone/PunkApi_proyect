@@ -131,7 +131,7 @@ body {
   width: 65%;
 }
 .menu-bg {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   width: 0;
