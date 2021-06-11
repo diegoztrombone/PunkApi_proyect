@@ -238,6 +238,9 @@ body {
   height: 5rem;
 }
 
+a:link {
+  background-color: none;
+}
 @media screen and (min-width: 752px) {
   .nav {
     position: unset;
@@ -253,9 +256,6 @@ body {
   #cover {
     background-position: right;
   }
-}
-
-@media (hover: hover) {
   .nav li:hover,
   #logo:hover {
     background-color: #38ceb3b9;
