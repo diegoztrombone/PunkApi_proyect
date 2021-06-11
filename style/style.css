@@ -2,8 +2,46 @@
   box-sizing: border-box;
 }
 body {
-  font-family: Helvetica, sans-serif;
-  background-color: #ff6567;
+  background-color: whitesmoke;
+  font-family: "Titillium Web", sans-serif;
+}
+
+#cover {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  background-image: url(../assets/principal-punkipa.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left center;
+  width: 100%;
+  height: 50vh;
+}
+
+#cover h1 {
+  color: white;
+  text-shadow: 1px 1px 5px black;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 32px;
+  margin-left: 10px;
+}
+
+#cover p {
+  text-shadow: 1px 1px 5px black;
+  color: white;
+  font-size: 18px;
+  margin-left: 10px;
+}
+
+#cover-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #ffffff3f;
+  width: 100%;
+  height: 75px;
 }
 
 #menu {
@@ -46,8 +84,19 @@ body {
 
 #logo {
   margin-left: 20px;
+  padding: 7px 13px;
+  transition: 0.3s ease;
+  font-weight: 700;
 }
-#randomWrapper {
+
+#logo a {
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+#descriptionWrapper {
   min-height: 15rem;
   margin-top: 15px;
   display: flex;
@@ -64,12 +113,12 @@ body {
   height: 500px;
 }
 
-.beerDescriptionContainer img {
+.beerContainer img {
   width: 150px;
   height: 450px;
 }
 
-.beerDescriptionContainer {
+.beerContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -77,30 +126,36 @@ body {
   height: 50rem;
 }
 
-.descriptionBeer {
+.descriptionText {
   text-align: center;
   width: 65%;
 }
-/* .menu-bg {
+.menu-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
   width: 0;
   height: 0;
-  background-color: radial-gradient(
-    circle,
-    rgba(255, 0, 0, 0.739),
-    rgb(230, 21, 49)
-  );
+  background-color: #334a51ed;
+  transition: 0.3s ease;
+  z-index: 1;
 }
 .change-bg {
-  width: 550px;
-  height: 540px;
-} */
-
+  width: 100%;
+  height: 100vh;
+}
+.pageHeader {
+  margin-top: 50px;
+}
 .navbar {
+  position: fixed;
+  top: 0;
+  z-index: 2;
   color: white;
   width: 100%;
   height: 50px;
-  background-color: black;
-  box-shadow: 5px 0px 15px 5px rgba(0, 0, 0, 0.4);
+  background-color: #33afcb;
+  box-shadow: 4px -2px 13px 2px rgb(0 0 0 / 40%);
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -131,11 +186,16 @@ body {
   color: white;
   text-decoration: none;
   margin: 0 15px;
-  padding: 10px 15px;
+  padding: 7px 13px;
+  transition: 0.3s ease;
 }
-
-.nav li:hover {
-  background-color: rgb(73, 73, 73);
+.nav li {
+  transition: 0.3s ease;
+}
+.nav li:hover,
+#logo:hover {
+  background-color: #38ceb3b9;
+  border-radius: 5px;
 }
 
 #beerSection {
@@ -145,15 +205,6 @@ body {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-}
-
-#randomWrapper {
-  min-height: 15rem;
-  margin-top: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 .imgContainer {
@@ -199,47 +250,7 @@ body {
   #menu {
     display: none;
   }
+  #cover {
+    background-position: right;
+  }
 }
-
-/*
-#beerSection {
-  margin-top: 15px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.imgContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 150px;
-  height: 300px;
-}
-
-.tarjetClass img {
-  width: 75px;
-  height: 225px;
-}
-
-.tarjetClass {
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 30rem;
-}
-
-.descriptionBox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 65%;
-  height: 5rem;
-}
-
-*/

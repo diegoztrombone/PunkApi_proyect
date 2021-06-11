@@ -6,16 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../style/style.css" />
     <link rel="stylesheet" href="../style/reset.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,300;0,700;1,300&display=swap"
+      rel="stylesheet"
+    />
     <title>Nuestras Cervezas</title>
   </head>
   <body>
     <nav class="navbar">
       <div id="logo">
-        <p>PUNK API</p>
+        <a href="../index.html">PUNK API</a>
       </div>
       <ul class="nav" id="nav">
-        <li><a class="active" href="../index.html">Inicio</a></li>
-        <li><a href="../beers/beers.html">Nuestras Cervezas</a></li>
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="beers.html">Nuestras Cervezas</a></li>
         <li><a href="../description/description.html?ID=random">Random</a></li>
       </ul>
       <div id="menu">
@@ -24,10 +28,12 @@
         <div id="bar3" class="bar"></div>
       </div>
     </nav>
-    <header>
+    <div id="menu-bg" class="menu-bg"></div>
+    <header class="pageHeader">
       <h2>Cervezas funcionales</h2>
       <p>Currificadas y compuestas</p>
     </header>
+
     <main>
       <section>
         <label for="searchBar">Búsqueda</label>
