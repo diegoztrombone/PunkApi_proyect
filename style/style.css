@@ -192,8 +192,8 @@ body {
 .nav li {
   transition: 0.3s ease;
 }
-.nav li:hover,
-#logo:hover {
+.nav li:active,
+#logo:active {
   background-color: #38ceb3b9;
   border-radius: 5px;
 }
@@ -252,5 +252,10 @@ body {
   }
   #cover {
     background-position: right;
+  }
+  .nav li:hover,
+  #logo:hover {
+    background-color: #38ceb3b9;
+    border-radius: 5px;
   }
 }
