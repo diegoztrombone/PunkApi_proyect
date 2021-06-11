@@ -253,6 +253,9 @@ body {
   #cover {
     background-position: right;
   }
+}
+
+@media (hover: hover) {
   .nav li:hover,
   #logo:hover {
     background-color: #38ceb3b9;
