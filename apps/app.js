@@ -1,8 +1,9 @@
 const beerSectionNode = document.getElementById("beerSection");
+const navNode = document.getElementById("head");
 const randomBeer = document.getElementById("randomBtn");
-const myPlusBnt = document.getElementById("pagePlus");
-const myLessBnt = document.getElementById("pageLess");
-const apiUrl = "https://api.punkapi.com/v2/beers?page=1&per_page=10";
+const myPlusBnt = document.querySelector(".pagePlus");
+const myLessBnt = document.querySelector(".pageLess");
+const apiUrl = "https://api.punkapi.com/v2/beers?page=1&per_page=12";
 const randomApiUrl = "https://api.punkapi.com/v2/beers/random";
 const searchNode = document.getElementById("searchBar");
 const buttonNode = document.getElementById("searchButton");
@@ -24,7 +25,17 @@ const counterObj = {
 const dataCb = (x) => (beerSectionNode.innerHTML += printBeer(x));
 
 const printBeer = (data) =>
-  `<div class="tarjetClass"><div class="imgContainer"><img src="${data.image_url}"></div><div class="descriptionBox"><a href="../description/description.html?ID=${data.id}"><h3>${data.name}</h3></a></div></div>`;
+  `<div class="tarjetClass">
+    <div class="imgContainer">
+      <a href="../description/description.html?ID=${data.id}">
+    <img src="${data.image_url}"></a>
+    </div>
+    <div class="descriptionBox">
+      <a href="../description/description.html?ID=${data.id}">
+      <h3>${data.name}</h3></a>
+      <p>${data.tagline}</p>
+      </div>
+    </div>`;
 
 const fetchedData = (url) => {
   return fetch(url).then((res) => res.json());
@@ -44,27 +55,28 @@ const allFetchedBeer = (urlArr) => {
 };
 
 myPlusBnt.addEventListener("click", (e) => {
-  if (counterObj.counter >= 32) {
+  navNode.scrollIntoView({ behavior: "smooth" });
+  if (counterObj.counter >= 28) {
     return e.preventDefault();
   } else {
     counterObj.counter++;
     beerSectionNode.innerHTML = "";
     fetchedData(
-      `https://api.punkapi.com/v2/beers?page=${counterObj.counter}&per_page=10`
+      `https://api.punkapi.com/v2/beers?page=${counterObj.counter}&per_page=12`
     ).then((data) => data.map(dataCb));
+    searchNode.scrollIntoView();
   }
 });
 
 myLessBnt.addEventListener("click", (e) => {
-  allFetchedBeer(allBeerArr);
+  navNode.scrollIntoView({ behavior: "smooth" });
   if (counterObj.counter <= 1) {
     return e.preventDefault();
   } else {
     counterObj.counter--;
     beerSectionNode.innerHTML = "";
-    beerSectionNode.innerHTML = "Loading";
     fetchedData(
-      `https://api.punkapi.com/v2/beers?page=${counterObj.counter}&per_page=10`
+      `https://api.punkapi.com/v2/beers?page=${counterObj.counter}&per_page=12`
     ).then((data) => data.map(dataCb));
   }
 });
@@ -73,7 +85,7 @@ function debounce(search, timeout = 300, node) {
   return new Promise((res, rej) => {
     clearTimeout(timer);
     if (search == "") return;
-    node.innerHTML = "Loading";
+    node.innerHTML = `<div class="loader"></div>`;
     timer = setTimeout(async () => {
       const awaitedData = await fetchedData(
         `https://api.punkapi.com/v2/beers?beer_name=${search}&per_page=80`
@@ -95,13 +107,6 @@ searchNode.addEventListener("keyup", (e) => {
     beerSectionNode.innerHTML = "";
     data.map(dataCb);
   });
-
-  // beerSectionNode.innerHTML = ""
-  // let beersFilter = beersArr.filter((element) => {
-  //     return element.toLowerCase().includes(beerSearch)
-
-  // })
-  // console.log(beersFilter)
 });
 
 randomBeer.addEventListener("click", () => {

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../style/style.css" />
     <link rel="stylesheet" href="../style/reset.css" />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,300;0,700;1,300&display=swap"
       rel="stylesheet"
@@ -29,23 +30,30 @@
       </div>
     </nav>
     <div id="menu-bg" class="menu-bg"></div>
-    <header class="pageHeader">
-      <h2>Cervezas funcionales</h2>
-      <p>Currificadas y compuestas</p>
+    <header id="head" class="pageHeader image2">
+      <section id="cover-container" class="pageHeader-container">
+        <h2>Cervezas 100% no funcionales</h2>
+        <p>Sin currificados ni composiciones</p>
+      </section>
     </header>
 
     <main>
-      <section>
-        <label for="searchBar">Búsqueda</label>
+      <section id="searchSection">
         <input type="text" id="searchBar" placeholder="Tu Búsqueda" />
       </section>
-      <div>
-        <button id="pageLess">Previous Page</button>
-        <button id="pagePlus">Next Page</button>
-      </div>
 
       <section id="beerSection"></section>
     </main>
+    <div id="buttonWrapper">
+      <div class="pageLess btn">
+        <i class="fas fa-caret-left"></i>
+        <p>Anterior</p>
+      </div>
+      <div class="pagePlus btn">
+        <p>Siguiente</p>
+        <i class="fas fa-caret-right"></i>
+      </div>
+    </div>
     <section id="randomCard">
       <div>
         <h3>¿No te decides?</h3>
@@ -55,7 +63,11 @@
         ><img class="dice" src="../assets/dice white.png"
       /></a>
     </section>
-
+    <div class="footer"><p>By Diego Zeta - No apto para un UX/UI</p></div>
+    <script
+      src="https://kit.fontawesome.com/f347d1f9d7.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="../apps/app.js"></script>
     <script src="../apps/menu.js"></script>
   </body>
