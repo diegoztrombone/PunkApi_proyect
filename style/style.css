@@ -1,6 +1,9 @@
 * {
   box-sizing: border-box;
 }
+#mapid {
+  height: 180px;
+}
 body {
   background-color: whitesmoke;
   font-family: "Titillium Web", sans-serif;
@@ -153,7 +156,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 50rem;
+  height: 100vh;
 }
 
 .descriptionText {
@@ -197,7 +200,8 @@ body {
 .nav {
   position: absolute;
   top: 100px;
-  right: 5px;
+  right: 0;
+  left: 0;
   display: flex;
   align-items: flex-end;
   flex-direction: column;
@@ -207,6 +211,7 @@ body {
 
 .change {
   display: flex;
+  align-items: center;
 }
 
 .nav li a {
@@ -219,6 +224,12 @@ body {
   padding: 7px 10px;
   transition: 0.3s ease;
 }
+
+.change li a {
+  font-size: 20px;
+  font-weight: 700;
+}
+
 .nav li {
   transition: 0.3s ease;
 }
@@ -244,13 +255,11 @@ body {
   justify-content: center;
   width: 150px;
   height: 300px;
-  -webkit-box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.74);
-  box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.74);
 }
 
 .tarjetClass img {
-  width: 85px;
-  height: 235px;
+  width: 60px;
+  height: 185px;
 }
 
 .tarjetClass {
@@ -260,14 +269,15 @@ body {
   width: 45%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   height: 30rem;
   transition: 0.3s ease;
 }
 
-.tarjetClass:hover {
-  background-color: #77e7a231;
+.tarjetClass:active {
+  -webkit-box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.74);
+  box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.74);
 }
 
 .descriptionBox {
@@ -279,13 +289,28 @@ body {
   width: 65%;
   height: 5rem;
 }
-
+.descriptionBox p {
+  font-size: 14px;
+}
 .descriptionBox h3 {
   text-transform: uppercase;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 700;
 }
+.buyBtn {
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.253);
+  text-transform: uppercase;
+  font-size: 14px;
+  font-style: italic;
+  padding: 5px;
+  transition: 0.3s ease;
+}
 
+.buyBtn:active {
+  -webkit-box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.5);
+}
 #randomCard {
   margin: 0 auto;
   display: flex;
@@ -382,10 +407,6 @@ a:active {
   margin: 0 10px;
 }
 
-.pageLess {
-  margin-right: 10px;
-}
-
 .pagePlus {
   margin-left: 10px;
 }
@@ -399,6 +420,56 @@ a:active {
   animation: spin 2s linear infinite;
 }
 
+#searchIndexSection {
+  margin-top: 3.5vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* display: none; */
+}
+#searchPlace {
+  margin-top: 10px;
+  width: 100%;
+  height: 25vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.searchList a {
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.indexLoader {
+  margin-top: 10px;
+  width: 100px;
+  height: 100px;
+}
+
+.searchTitle {
+  font-weight: 700;
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.searchList {
+  border: 0.5px solid black;
+  background-color: white;
+  padding: 5px;
+  margin-bottom: 3px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.searchList:hover {
+  -webkit-box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.5);
+}
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -408,7 +479,24 @@ a:active {
   }
 }
 
+@media screen and (max-height: 700px) {
+  #descriptionWrapper {
+    height: 120vh;
+  }
+}
+@media screen and (max-width: 340px) {
+  .tarjetClass {
+    width: 80%;
+  }
+}
+
 @media screen and (min-width: 752px) {
+  .searchList a {
+    font-size: 20px;
+  }
+  .navbar {
+    height: 65px;
+  }
   .nav {
     position: unset;
     display: flex;
@@ -428,15 +516,67 @@ a:active {
   }
 
   .randomButton .dice {
-    width: 90%;
+    width: 100%;
     transition: 0.3s ease;
   }
 
   .dice:hover {
-    width: 80%;
+    width: 90%;
   }
+
+  .tarjetClass img {
+    width: 70px;
+    height: 185px;
+  }
+
   .tarjetClass {
+    margin: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.281);
+    border-collapse: collapse;
     width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 30rem;
+    transition: 0.3s ease;
+  }
+
+  .tarjetClass:hover {
+    -webkit-box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.74);
+    box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.74);
+  }
+
+  .descriptionBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 65%;
+    height: 5rem;
+  }
+  .descriptionBox p {
+    font-size: 16px;
+  }
+  .descriptionBox h3 {
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .buyBtn {
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.253);
+    text-transform: uppercase;
+    font-size: 14px;
+    font-style: italic;
+    padding: 5px;
+    transition: 0.3s ease;
+  }
+
+  .buyBtn:hover {
+    -webkit-box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.5);
   }
 }
 
@@ -445,5 +585,106 @@ a:active {
     background-image: url(../assets/principal-punkipa2.jpg);
     background-size: cover;
     background-position: center;
+  }
+  .image2 {
+    background-position: 0 -600px;
+  }
+  .randomButton .dice {
+    width: 120%;
+    transition: 0.3s ease;
+  }
+
+  .dice:hover {
+    width: 110%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .image1 {
+    background-image: url(../assets/principal-punkipa2.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  .image2 {
+    background-position: bottom;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  #searchPlace {
+    height: 60vh;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .searchList {
+    margin: 10px 10px;
+  }
+  #randomCard {
+    flex-direction: row;
+  }
+  .randomButton .dice {
+    width: 60%;
+    transition: 0.3s ease;
+  }
+
+  .dice:hover {
+    width: 55%;
+  }
+  #buttonWrapper {
+    margin: 35px 0;
+  }
+
+  #descriptionWrapper {
+    height: 150vh;
+  }
+  .beerContainer {
+    flex-direction: row;
+  }
+}
+
+@media screen and (orientation: landscape) and (min-width: 900px) {
+  .randomButton .dice {
+    width: 120%;
+    transition: 0.3s ease;
+  }
+
+  .dice:hover {
+    width: 110%;
+  }
+  #descriptionWrapper {
+    height: 150vh;
+  }
+  .beerContainer {
+    flex-direction: column;
+  }
+  #searchPlace {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+  .searchList {
+    margin: 10px 0;
+  }
+}
+
+@media screen and (orientation: landscape) and (min-width: 900px) {
+  #descriptionWrapper {
+    height: 100vh;
+  }
+}
+
+@media screen and (orientation: portrait) and (min-width: 900px) {
+  #randomCard {
+    flex-direction: row;
+  }
+  .randomButton .dice {
+    width: 120%;
+    transition: 0.3s ease;
+  }
+
+  .dice:hover {
+    width: 110%;
+  }
+  #descriptionWrapper {
+    height: 100vh;
   }
 }

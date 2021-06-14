@@ -1,5 +1,5 @@
 const beerSectionNode = document.getElementById("beerSection");
-const navNode = document.getElementById("head");
+const headNode = document.getElementById("head");
 const randomBeer = document.getElementById("randomBtn");
 const myPlusBnt = document.querySelector(".pagePlus");
 const myLessBnt = document.querySelector(".pageLess");
@@ -30,6 +30,7 @@ const printBeer = (data) =>
       <a href="../description/description.html?ID=${data.id}">
     <img src="${data.image_url}"></a>
     </div>
+    <a href="../description/description.html?ID=${data.id}" class="buyBtn">Más info</a>
     <div class="descriptionBox">
       <a href="../description/description.html?ID=${data.id}">
       <h3>${data.name}</h3></a>
@@ -55,7 +56,7 @@ const allFetchedBeer = (urlArr) => {
 };
 
 myPlusBnt.addEventListener("click", (e) => {
-  navNode.scrollIntoView({ behavior: "smooth" });
+  headNode.scrollIntoView({ behavior: "smooth" });
   if (counterObj.counter >= 28) {
     return e.preventDefault();
   } else {
@@ -69,7 +70,7 @@ myPlusBnt.addEventListener("click", (e) => {
 });
 
 myLessBnt.addEventListener("click", (e) => {
-  navNode.scrollIntoView({ behavior: "smooth" });
+  headNode.scrollIntoView({ behavior: "smooth" });
   if (counterObj.counter <= 1) {
     return e.preventDefault();
   } else {
