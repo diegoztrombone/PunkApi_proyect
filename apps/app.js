@@ -1,5 +1,5 @@
 const beerSectionNode = document.getElementById("beerSection");
-const headNode = document.getElementById("head");
+const headNode = document.getElementById("logo");
 const randomBeer = document.getElementById("randomBtn");
 const myPlusBnt = document.querySelector(".pagePlus");
 const myLessBnt = document.querySelector(".pageLess");
